@@ -4,12 +4,10 @@ import mysql.connector
 import os
 from pydantic import BaseModel
 
-f = open(os.environ.get("DATABASE_PASSWORD"), "r")
-password= f.read()
 mydb = mysql.connector.connect(
   host=os.environ.get("DATABASE_HOST"),
   user=os.environ.get("DATABASE_USER"),
-  password=password,
+  password=os.environ.get("DATABASE_PASSWORD"),
   database=os.environ.get("DATABASE_DB")
 )
 mycursor = mydb.cursor()
