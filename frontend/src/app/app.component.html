@@ -1,0 +1,17 @@
+<button (click)="onClick()">Click Me!</button>
+<p>Hello!</p>
+
+
+  <div *ngFor="let customer of customers; index as i">
+    Key: <b>{{customer.firstname}}</b> and Value: <b>{{customer.test}}</b>
+  </div>
+
+  <form>
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" name="firstname" [(ngModel)]="firstName">
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" name="description" [(ngModel)]="description">
+    <button (click)="onSubmit()">Savee</button>
+  </form>
